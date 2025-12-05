@@ -4,6 +4,7 @@
 #include <gtc/matrix_transform.hpp>
 
 class Camera {
+
 public:
     glm::vec3 Position;
     glm::vec3 Front;
