@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ﻿ // Scene.h
+=======
+// Scene.h
+>>>>>>> f548684fc4b9fc87d9e22157b8360ae2e11358c9
 #pragma once
 #include <vector>
 #include "SceneObject.h"

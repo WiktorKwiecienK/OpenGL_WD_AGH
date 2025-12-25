@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ﻿#pragma once
+=======
+#pragma once
+>>>>>>> f548684fc4b9fc87d9e22157b8360ae2e11358c9
 #include <glm.hpp>
 
 class LightingSystem {
@@ -17,7 +21,11 @@ public:
     int shininess;
 
     LightingSystem()
+<<<<<<< HEAD
         : lightPos(0.0f, 0.0f, 0.0f),
+=======
+        : lightPos(0.0f, 5.0f, 0.0f),
+>>>>>>> f548684fc4b9fc87d9e22157b8360ae2e11358c9
         lightColor(1.0f, 1.0f, 1.0f),
         useAmbient(true),
         useDiffuse(true),

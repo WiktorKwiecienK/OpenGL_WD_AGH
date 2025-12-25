@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ï»¿#include "Texture.h"
+=======
+#include "Texture.h"
+>>>>>>> f548684fc4b9fc87d9e22157b8360ae2e11358c9
 #define STB_IMAGE_IMPLEMENTATION
 #include "stb_image.h"
 #include <iostream>
@@ -28,10 +32,17 @@ Texture::Texture(const char* texturePath) {
         glTexImage2D(GL_TEXTURE_2D, 0, format, width, height, 0, format, GL_UNSIGNED_BYTE, data);
         glGenerateMipmap(GL_TEXTURE_2D);
 
+<<<<<<< HEAD
         std::cout << "Tekstura zaÅ‚adowana: " << texturePath << " (" << width << "x" << height << ", " << nrChannels << " kanaÅ‚Ã³w)" << std::endl;
     }
     else {
         std::cerr << "BÅ‚Ä…d Å‚adowania tekstury: " << texturePath << std::endl;
+=======
+        std::cout << "Tekstura za³adowana: " << texturePath << " (" << width << "x" << height << ", " << nrChannels << " kana³ów)" << std::endl;
+    }
+    else {
+        std::cerr << "B³¹d ³adowania tekstury: " << texturePath << std::endl;
+>>>>>>> f548684fc4b9fc87d9e22157b8360ae2e11358c9
     }
 
     stbi_image_free(data);
