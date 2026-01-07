@@ -21,4 +21,4 @@ public:
     void setBool(const std::string& name, bool value) const;
 private:
     void checkCompileErrors(GLuint shader, std::string type);
-};
+}

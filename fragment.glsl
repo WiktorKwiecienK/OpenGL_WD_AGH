@@ -27,19 +27,20 @@ uniform int shininess;
 
 void main() {
     vec4 objectColor;
-    
+
     if (useTexture == 1) {
         objectColor = texture(texture1, TexCoord);
-    } else {
+    }
+    else {
         objectColor = vec4(ourColor, 1.0);
     }
-    
+
     // Ambient (światło otoczenia)
     vec3 ambient = vec3(0.0);
     if (useAmbient) {
         ambient = ambientStrength * lightColor;
     }
-    
+
     // Diffuse (światło rozproszone)
     vec3 diffuse = vec3(0.0);
     if (useDiffuse) {
@@ -48,7 +49,7 @@ void main() {
         float diff = max(dot(norm, lightDir), 0.0);
         diffuse = diff * lightColor;
     }
-    
+
     // Specular (światło odbłysków)
     vec3 specular = vec3(0.0);
     if (useSpecular) {
@@ -59,7 +60,7 @@ void main() {
         float spec = pow(max(dot(viewDir, reflectDir), 0.0), shininess);
         specular = specularStrength * spec * lightColor;
     }
-    
+
     vec3 result = (ambient + diffuse + specular);
     FragColor = vec4(result, 1.0) * objectColor;
 }

@@ -25,8 +25,8 @@ void Camera::processMouse(float xOffset, float yOffset) {
     Yaw += xOffset;
     Pitch += yOffset;
 
-     if (Pitch > 179.0f) Pitch = 179.0f;
-     if (Pitch < -179.0f) Pitch = -179.0f;
+    if (Pitch > 179.0f) Pitch = 179.0f;
+    if (Pitch < -179.0f) Pitch = -179.0f;
 
     glm::vec3 front;
     front.x = cos(glm::radians(Yaw)) * cos(glm::radians(Pitch));

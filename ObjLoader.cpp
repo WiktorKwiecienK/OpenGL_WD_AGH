@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 ﻿#include "OBJLoader.h"
-=======
-#include "OBJLoader.h"
->>>>>>> f548684fc4b9fc87d9e22157b8360ae2e11358c9
 #include <fstream>
 #include <sstream>
 #include <iostream>
@@ -13,19 +9,11 @@ bool OBJLoader::loadFromFile(const std::string& filepath) {
     std::ifstream file(filepath);
 
     if (!file.is_open()) {
-<<<<<<< HEAD
-        std::cerr << "Nie można otworzyć pliku: " << filepath << std::endl;
+        std::cerr << "Nie mo¿na otworzyæ pliku: " << filepath << std::endl;
         return false;
     }
 
-    // Wyczyść poprzednie dane
-=======
-        std::cerr << "Nie mo�na otworzy� pliku: " << filepath << std::endl;
-        return false;
-    }
-
-    // Wyczy�� poprzednie dane
->>>>>>> f548684fc4b9fc87d9e22157b8360ae2e11358c9
+    // Wyczyœæ poprzednie dane
     temp_vertices.clear();
     temp_texCoords.clear();
     temp_normals.clear();
@@ -39,11 +27,7 @@ bool OBJLoader::loadFromFile(const std::string& filepath) {
 
     file.close();
 
-<<<<<<< HEAD
-    std::cout << "Załadowano model: " << filepath << std::endl;
-=======
-    std::cout << "Za�adowano model: " << filepath << std::endl;
->>>>>>> f548684fc4b9fc87d9e22157b8360ae2e11358c9
+    std::cout << "Za³adowano model: " << filepath << std::endl;
     printInfo();
 
     return true;
@@ -116,11 +100,7 @@ void OBJLoader::parseFace(const std::string& line) {
             i++;
         }
 
-<<<<<<< HEAD
-        face.vertexIndices.push_back(indices[0] - 1);  // OBJ używa indeksów od 1
-=======
-        face.vertexIndices.push_back(indices[0] - 1);  // OBJ u�ywa indeks�w od 1
->>>>>>> f548684fc4b9fc87d9e22157b8360ae2e11358c9
+        face.vertexIndices.push_back(indices[0] - 1);  // OBJ u¿ywa indeksów od 1
         if (indices[1] > 0) face.texCoordIndices.push_back(indices[1] - 1);
         if (indices[2] > 0) face.normalIndices.push_back(indices[2] - 1);
     }
@@ -142,11 +122,7 @@ std::vector<float> OBJLoader::getVertexDataRange(int startFace, int endFace, con
     for (int faceIdx = startFace; faceIdx < endFace; faceIdx++) {
         const Face& face = temp_faces[faceIdx];
 
-<<<<<<< HEAD
-        // Dla każdego wierzchołka w ścianie
-=======
-        // Dla ka�dego wierzcho�ka w �cianie
->>>>>>> f548684fc4b9fc87d9e22157b8360ae2e11358c9
+        // Dla ka¿dego wierzcho³ka w œcianie
         for (size_t i = 0; i < face.vertexIndices.size(); i++) {
             unsigned int vertexIdx = face.vertexIndices[i];
 
@@ -162,11 +138,7 @@ std::vector<float> OBJLoader::getVertexDataRange(int startFace, int endFace, con
             vertexData.push_back(color.g);
             vertexData.push_back(color.b);
 
-<<<<<<< HEAD
-            // Tekstura (jeśli jest)
-=======
-            // Tekstura (je�li jest)
->>>>>>> f548684fc4b9fc87d9e22157b8360ae2e11358c9
+            // Tekstura (jeœli jest)
             if (i < face.texCoordIndices.size() && face.texCoordIndices[i] < temp_texCoords.size()) {
                 vertexData.push_back(temp_texCoords[face.texCoordIndices[i]].x);
                 vertexData.push_back(temp_texCoords[face.texCoordIndices[i]].y);
@@ -176,22 +148,14 @@ std::vector<float> OBJLoader::getVertexDataRange(int startFace, int endFace, con
                 vertexData.push_back(0.0f);
             }
 
-<<<<<<< HEAD
-            // Normalna (jeśli jest)
-=======
-            // Normalna (je�li jest)
->>>>>>> f548684fc4b9fc87d9e22157b8360ae2e11358c9
+            // Normalna (jeœli jest)
             if (i < face.normalIndices.size() && face.normalIndices[i] < temp_normals.size()) {
                 vertexData.push_back(temp_normals[face.normalIndices[i]].x);
                 vertexData.push_back(temp_normals[face.normalIndices[i]].y);
                 vertexData.push_back(temp_normals[face.normalIndices[i]].z);
             }
             else {
-<<<<<<< HEAD
-                // Jeśli nie ma normalnych, oblicz je
-=======
-                // Je�li nie ma normalnych, oblicz je
->>>>>>> f548684fc4b9fc87d9e22157b8360ae2e11358c9
+                // Jeœli nie ma normalnych, oblicz je
                 vertexData.push_back(0.0f);
                 vertexData.push_back(1.0f);
                 vertexData.push_back(0.0f);
@@ -203,15 +167,8 @@ std::vector<float> OBJLoader::getVertexDataRange(int startFace, int endFace, con
 }
 
 void OBJLoader::printInfo() const {
-<<<<<<< HEAD
-    std::cout << "  Wierzchołki: " << temp_vertices.size() << std::endl;
+    std::cout << "  Wierzcho³ki: " << temp_vertices.size() << std::endl;
     std::cout << "  Koordynaty tekstur: " << temp_texCoords.size() << std::endl;
     std::cout << "  Wektory normalne: " << temp_normals.size() << std::endl;
-    std::cout << "  Ściany: " << temp_faces.size() << std::endl;
-=======
-    std::cout << "  Wierzcho�ki: " << temp_vertices.size() << std::endl;
-    std::cout << "  Koordynaty tekstur: " << temp_texCoords.size() << std::endl;
-    std::cout << "  Wektory normalne: " << temp_normals.size() << std::endl;
-    std::cout << "  �ciany: " << temp_faces.size() << std::endl;
->>>>>>> f548684fc4b9fc87d9e22157b8360ae2e11358c9
+    std::cout << "  Œciany: " << temp_faces.size() << std::endl;
 }

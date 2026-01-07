@@ -1,17 +1,17 @@
-#include "ModelMesh.h"
+ï»¿#include "ModelMesh.h"
 
 ModelMesh::ModelMesh(const std::string& objPath, const glm::vec3& color)
     : Mesh({}, 11), modelPath(objPath) {
 
     if (!loader.loadFromFile(objPath)) {
-        std::cerr << "B³¹d ³adowania modelu: " << objPath << std::endl;
+        std::cerr << "BÂ³Â¹d Â³adowania modelu: " << objPath << std::endl;
         return;
     }
 
     std::vector<float> vertices = loader.getVertexData(color);
 
     if (vertices.empty()) {
-        std::cerr << "Brak danych wierzcho³ków!" << std::endl;
+        std::cerr << "Brak danych wierzchoÂ³kÃ³w!" << std::endl;
         return;
     }
 
@@ -44,16 +44,16 @@ ModelMesh::ModelMesh(const std::string& objPath, int startFace, int endFace, con
     : Mesh({}, 11), modelPath(objPath) {
 
     if (!loader.loadFromFile(objPath)) {
-        std::cerr << "B³¹d ³adowania modelu: " << objPath << std::endl;
+        std::cerr << "BÂ³Â¹d Â³adowania modelu: " << objPath << std::endl;
         return;
     }
 
-    std::cout << "£adowanie fragmentu modelu: œciany " << startFace << " do " << endFace << std::endl;
+    std::cout << "Â£adowanie fragmentu modelu: Å“ciany " << startFace << " do " << endFace << std::endl;
 
     std::vector<float> vertices = loader.getVertexDataRange(startFace, endFace, color);
 
     if (vertices.empty()) {
-        std::cerr << "Brak danych wierzcho³ków dla fragmentu!" << std::endl;
+        std::cerr << "Brak danych wierzchoÂ³kÃ³w dla fragmentu!" << std::endl;
         return;
     }
 
@@ -77,5 +77,5 @@ ModelMesh::ModelMesh(const std::string& objPath, int startFace, int endFace, con
 
     glBindVertexArray(0);
 
-    std::cout << "Za³adowano " << vertexCount << " wierzcho³ków dla fragmentu" << std::endl;
+    std::cout << "ZaÂ³adowano " << vertexCount << " wierzchoÂ³kÃ³w dla fragmentu" << std::endl;
 }

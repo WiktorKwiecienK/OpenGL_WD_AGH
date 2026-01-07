@@ -34,38 +34,27 @@ void Application::setupScene() {
 
     Texture* dirtTexture = new Texture("textures/dirt.png");
     Texture* JosephTexture = new Texture("textures/Pan_zywiec_zdroj_wynalazca_wody.png");
+    Texture* Puchaty = new Texture("textures/xi2.png");
 
-<<<<<<< HEAD
-    Cube* JosephCube = new Cube();
-	
-
-   ModelMesh* testObj = new ModelMesh("models/basicObj.obj", 0, 28, glm::vec3(0.3f, 0.3f, 0.9f));
-=======
     Cube* cube1 = new Cube();
     scene->addObject(new SceneObject(cube1, glm::vec3(0.0f, 0.0f, 0.0f),
-        glm::vec3(0.0f), glm::vec3(1.0f), dirtTexture));
+        glm::vec3(0.0f), glm::vec3(1.0f), Puchaty));
 
-    Cube* JosephCube = new Cube();
-	scene->addObject(new SceneObject(cube1, glm::vec3(0.0f, 2.0f, 0.0f),
-        glm::vec3(0.0f), glm::vec3(1.0f), JosephTexture));
+    /* Cube* JosephCube = new Cube();
+     scene->addObject(new SceneObject(cube1, glm::vec3(0.0f, 2.0f, 0.0f),
+         glm::vec3(0.0f), glm::vec3(1.0f), Puchaty));
 
-   /* ModelMesh* testObj = new ModelMesh("models/basicObj.obj", 0, 28, glm::vec3(0.3f, 0.3f, 0.9f));
->>>>>>> f548684fc4b9fc87d9e22157b8360ae2e11358c9
-    scene->addObject(new SceneObject(testObj, glm::vec3(3.0f, -1.0f, 0.0f),
-        glm::vec3(0.0f), glm::vec3(1.0f), dirtTexture));
+    ModelMesh* testObj = new ModelMesh("models/basicObj.obj", 0, 28, glm::vec3(0.3f, 0.3f, 0.9f));
+     scene->addObject(new SceneObject(testObj, glm::vec3(3.0f, -1.0f, 0.0f),
+         glm::vec3(0.0f), glm::vec3(1.0f), dirtTexture));
 
-    ModelMesh* josephObj = new ModelMesh("models/basicObj.obj", 0, 28, glm::vec3(0.3f, 0.3f, 0.9f));
-<<<<<<< HEAD
-    scene->addObject(new SceneObject(josephObj, glm::vec3(-3.0f, -1.0f, 0.0f),
-        glm::vec3(0.0f), glm::vec3(1.0f), JosephTexture));
+     ModelMesh* josephObj = new ModelMesh("models/basicObj.obj", 0, 28, glm::vec3(0.3f, 0.3f, 0.9f));
+     scene->addObject(new SceneObject(josephObj, glm::vec3(-3.0f, -1.0f, 0.0f),
+         glm::vec3(0.0f), glm::vec3(1.0f), JosephTexture));
 
-    ModelMesh* d3Obj = new ModelMesh("models/basicObj.obj", 0, 28, glm::vec3(0.3f, 0.3f, 0.9f));
-    scene->addObject(new SceneObject(d3Obj, glm::vec3(-6.0f, -1.0f, 0.0f),
-        glm::vec3(0.0f), glm::vec3(1.0f), JosephTexture));
-=======
-    scene->addObject(new SceneObject(testObj, glm::vec3(-3.0f, -1.0f, 0.0f),
-        glm::vec3(0.0f), glm::vec3(1.0f), JosephTexture));*/
->>>>>>> f548684fc4b9fc87d9e22157b8360ae2e11358c9
+     ModelMesh* d3Obj = new ModelMesh("models/basicObj.obj", 0, 28, glm::vec3(0.3f, 0.3f, 0.9f));
+     scene->addObject(new SceneObject(d3Obj, glm::vec3(-6.0f, -1.0f, 0.0f),
+         glm::vec3(0.0f), glm::vec3(1.0f), JosephTexture));*/
 
     std::cout << "\n=== MODELE ZAŁADOWANE ===" << std::endl;
     std::cout << "Naciśnij '8' aby wyświetlić info o modelach" << std::endl;

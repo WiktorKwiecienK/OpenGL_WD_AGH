@@ -6,7 +6,7 @@ class Mesh {
 protected:
     GLuint VAO, VBO;
     int vertexCount;
-    int stride; 
+    int stride;
 
 public:
     Mesh(const std::vector<float>& vertices, int stride = 6);
